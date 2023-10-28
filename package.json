@@ -1,16 +1,19 @@
 {
   "name": "@coinpacket/nest-web3js",
-  "version": "1.0.0",
+  "version": "1.0.6",
   "description": "The nestjs-web3js is a NestJS module that provides a connection to Ethereum's blockchain. It uses the web3.js library, which is a collection of libraries that allow you to interact with a local or remote Ethereum node using HTTP, IPC, or WebSocket.",
   "author": "0xCoinPacket",
   "license": "MIT",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/CoinPacket/nest-web3js.git"
   },
   "scripts": {
-    "build": "rimraf dist && tsc && npm run build:index",
+    "build": "rimraf dist && tsc",
     "build:index": "rimraf ./index.js ./index.d.ts && tsc -d --skipLibCheck ./index.ts",
     "format": "prettier **/*.ts --ignore-path ./.prettierignore --write && git status",
     "prepublish": "yarn run format && yarn run build",
